@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youness El Kabtane</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f5f5f5;
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            /*border-radius: 50%;*/
+            background: #ffff; 
+        }
+
+        .logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #010b13;
+        }
+
+        .nav-links a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #010b13;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #006d77;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            height: calc(100vh - 82px);
+            background: #010b13;
+            color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 52px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #f5f5f5;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 50px;
+            background: #006d77;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background: #005a63;
+        }
+
+        /* ================= SECTION HEADINGS ================= */
+        .section-heading {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-heading h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #010b13;
+        }
+
+        .heading-line {
+            width: 30px;
+            height: 5px;
+            background: #006d77;
+            margin: 15px auto;
+            border-radius: 10px;
+        }
+
+        .heading-sub {
+            max-width: 700px;
+            margin: auto;
+            color: #444;
+            font-size: 16px;
+        }
+
+        /* ================= ABOUT ================= */
+        .about {
+            padding: 100px 10%;
+            background: #f5f5f5;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-top: 50px;
+        }
+
+        .about-left h3, .about-right h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            margin-bottom: 25px;
+            color: #010b13;
+        }
+
+        .about-left p {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 35px;
+            background: #006d77;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: #005a63;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            background: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #010b13;
+        }
+
+        /* ================= PROJECTS ================= */
+        .projects {
+            padding: 100px 10%;
+            background: #f5f5f5;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .project-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .project-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: #010b13;
+        }
+
+        .project-content p {
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .project-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #006d77;
+            color: #f5f5f5;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .project-btn:hover {
+            background: #005a63;
+        }
+
+        /* ================= FOOTER ================= */
+        .main-footer {
+            background: #010b13;
+            color: #f5f5f5;
+            padding: 80px 10% 40px;
+        }
+
+        .footer-upper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #f5f5f5;
+        }
+
+        .footer-brand p {
+            max-width: 400px;
+            font-size: 15px;
+            color: #f5f5f5;
+            line-height: 1.7;
+        }
+
+        .footer-social h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #f5f5f5;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #f5f5f5;
+            font-size: 22px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #006d77;
+            transform: translateY(-3px);
+        }
+
+        .footer-lower {
+            border-top: 1px solid #333;
+            padding-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            letter-spacing: 1px;
+            color: #f5f5f5;
+        }
+
+        .footer-lower a {
+            color: #006d77;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 900px) {
+            .navbar { padding: 20px; }
+            .nav-links { display: none; }
+            .about-content, .project-item { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 36px; }
+            .footer-upper { flex-direction: column; gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <span>YOUNESS</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>HEY, MY NAME IS YOUNESS EL KABTANE</h1>
+            <p>Industrial Automation Technician | PLC, HMI & Industrial Control Project</p>
+            <a href="#projects" class="hero-btn">Explore My Projects</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="section-heading">
+            <h2>ABOUT ME</h2>
+            <div class="heading-line"></div>
+            <p class="heading-sub">Here you will find more information about me, my background in industrial automation, and my current skills, with a focus on PLC programming, electronics, and industrial technologies.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-left">
+                <h3>Who I Am</h3>
+                <p>I’m <strong>Youness El Kabtane</strong>, a <strong>Specialized Technician</strong> graduate in <strong>Industrial Automation and Instrumentation</strong> from <strong><a herf="https://www.ofppt.ma">OFPPT</a></strong>, <strong>Morocco</strong>. I have hands-on experience with <strong>PLC programming</strong>, <strong>microcontrollers</strong>, <strong>PCB design</strong>, <strong>electronics</strong>, <strong>HMI development</strong>, and <strong>electrical panel installation and repair</strong>.</p>
+                <p> I am seeking an opportunity to start my career, develop my skills, and contribute to a professional automation environment.</p>
+                <a href="#" class="contact-btn">View My Resume</a>
+            </div>
+
+            <div class="about-right">
+                <h3>My Skills</h3>
+                <div class="skills">
+                    <div class="skill">Siemens PLC (S7-1200 / 300)</div>
+                    <div class="skill">WinCC Flexible </div>
+                    <div class="skill">Electronics</div>
+                    <div class="skill">PCB Design</div>
+                    <div class="skill">Arduino</div>
+                    <div class="skill">Electronics Simulation Software</div>
+                    <div class="skill">Festo Fluidsim</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">C/C++</div>
+                    <div class="skill">Sick Flexi Soft</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="section-heading">
+            <h2>PROJECTS</h2>
+            <div class="heading-line"></div>
+            <p class="heading-sub">Each project is a unique development experience.</p>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image6.png" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>PLC-Based Automatic Drainage Water Monitoring & Control System</h3>
+                <p>A PLC-based drainage control system using a Siemens S7-300 PLC and SIMATIC MP 177 HMI to monitor water levels and control a pump and valve. It supports manual/automatic modes with real-time visual status indicators for system operation.</p>
+                <a href="https://github.com/youness-el-kabtane/PLC-Based-Automatic-Drainage-Water-Monitoring-Control-System" class="project-btn">More details</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image1.png" alt="Project 1">
+            </div>
+            <div class="project-content">
+                <h3>Solar Panel Positioning System with GPS | Arduino-Based</h3>
+                <p>Arduino-based dual-axis solar tracking system that uses GPS data and a solar position algorithm to automatically adjust panel orientation, maximizing energy efficiency compared to fixed solar installations.</p>
+                <a href="https://github.com/youness-el-kabtane/Solar-Panel-Positioning-System-with-GPS-Arduino-Based" class="project-btn">More details</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image2.png" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>Arduino Servo Control whit a GUI Interface</h3>
+                <p>Arduino-based 4-servo motor control system with real-time angle and speed adjustments via a Python dashboard, showcasing precise hardware-software integration for robotics and automation.</p>
+                <a href="https://github.com/youness-el-kabtane/Arduino-Servo-Control-whit-a-GUI-Interface" class="project-btn">More details</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image3.png" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>Digital Clock Using 555 Timer and 74LS90</h3>
+                <p>Digital clock using 555 timer, 4013 flip-flops, and 74LS90 counters to count and display hours, minutes, and seconds on 7-segment displays with button-adjustable time.</p>
+                <a href="https://github.com/youness-el-kabtane/Digital-Clock-Using-555-Timer-and-74LS90-/tree/main" class="project-btn">More details</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image4.png" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>Matrix Operations (Add, Multiply)</h3>
+                <p>C program for basic matrix operations that performs addition and multiplication on user-defined matrices, demonstrating 2D arrays, nested loops, and modular programming.</p>
+                <a href="https://github.com/youness-el-kabtane/Matrix-Operations-Add-Multiply" class="project-btn">More details</a>
+            </div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-image">
+                <img src="assets/image5.png" alt="Project 2">
+            </div>
+            <div class="project-content">
+                <h3>Door Status Monitoring System</h3>
+                <p>Real-time door status monitoring system using ESP8266 (Wemos D1 mini) and an ultrasonic sensor to detect door state and log data to Google Sheets for remote access via web or mobile.</p>
+                <a href="https://github.com/youness-el-kabtane/Door-Status-Monitoring-Code" class="project-btn">More details</a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-upper">
+            <div class="footer-brand">
+                <h2>YOUNESS EL KABTANE</h2>
+                <p>Passionate about Designing Smart Automation Systems</p>
+            </div>
+            
+            <div class="footer-social">
+                <h2>SOCIAL</h2>
+                <div class="social-icons">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/youness-el-kabtane" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-lower">
+            <p>&copy; Copyright 2026. Made by <a href="#">Youness El Kabtane</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
